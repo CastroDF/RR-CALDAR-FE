@@ -1,0 +1,9 @@
+.Content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.MainContainer{
+    color:tomato;
+}

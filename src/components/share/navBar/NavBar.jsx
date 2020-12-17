@@ -6,16 +6,21 @@ class NavBar extends Component {
   render() {
     return (
     <nav>
-        <h1>CALDAR</h1>
         <ul>
             <li>
-                <Link to="/operator">OPERATOR</Link>
+                <Link to="/boilers">BOILERS</Link>
             </li>
             <li>
-                <Link to="/admin">ADMINISTRATOR</Link>
+                <Link to="/boilertypes">BOILER  TYPES</Link>
             </li>
             <li>
-                <Link to="/super">SUPER ADMINISTRATOR</Link>
+                <Link to="/technicians">TECHNICIANS</Link>
+            </li>
+            <li>
+                <Link to="/buildings">BUILDINGS</Link>
+            </li>
+            <li>
+                <Link to="/appointments">APPOINTMENTS</Link>
             </li>
         </ul>
     </nav>
