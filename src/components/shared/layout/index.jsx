@@ -4,7 +4,7 @@ import LeftBar from "../leftBar/";
 import MainContainer from "../mainContainer/";
 import style from './Layout.module.css';
 
-const Layout = ({ children }) => {
+const Layout = ({children}) => {
     return (
         <div className={style.layout}>
             <LeftBar />
