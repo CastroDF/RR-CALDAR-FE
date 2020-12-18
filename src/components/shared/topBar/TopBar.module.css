@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  background-color: #fc6225;
+}
+
+.header {
+    align-self: center;
+    margin-left: 2%;
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.logOut {
+  text-decoration: none;
+  margin: 1% 3% 0 0;
+  font-size: 1.2rem;
+  color: white;
+}
