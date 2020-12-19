@@ -1,0 +1,14 @@
+import React from 'react'
+import HeaderList from "./headerList";
+import Techs from "./Technicians";
+import styles from "./index.module.css"
+
+
+const Technicians = () => (
+        <div className={styles.mainColumn}>
+                <HeaderList />
+                <Techs />
+        </div>
+)
+
+export default Technicians;
