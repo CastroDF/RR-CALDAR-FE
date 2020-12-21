@@ -2,9 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import BoilerTypes from './components/BoilerTypes';
 import Appointments from './components/Appointments';
-import Layout from "./components/Shared/Layout";
-
-
+import Layout from './components/Shared/Layout';
 const Routes = () => {
   return (
     <Switch>
