@@ -1,18 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Routes from './Routes';
+import './style/globalStyle.css';
 
-
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div>
+    <div className="app">
+      <Router>
         <Switch>
           <Routes />
         </Switch>
-      </div>
-    </Router>
-  );
+      </Router>
+    </div>
+  )
 }
 
 export default App;
