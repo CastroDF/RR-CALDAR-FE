@@ -23,6 +23,9 @@ const LeftBar = () => {
         <li>
           <Link className={style.linkNav} to="/boilers">BOILERS</Link>
         </li>
+        <li>
+          <Link className={style.linkNav} to="/customers">CUSTOMERS</Link>
+        </li>
       </ul>
 
     </div>
