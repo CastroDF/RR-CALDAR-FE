@@ -14,6 +14,9 @@ const LeftBar = () => {
         <li>
           <Link className={style.linkNav} to="/boilertypes">BOILER  TYPES</Link>
         </li>
+        <li>
+          <Link className={style.linkNav} to="/appointments">APPOINTMENTS</Link>
+        </li>
       </ul>
 
     </div>
