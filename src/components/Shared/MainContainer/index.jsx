@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import styles from "./MainContainer.module.css";
+import React from 'react';
+import styles from './MainContainer.module.css';
 
-class LeftBar extends Component {
-  render() {
-    return (
-   <div className={styles.MainContainer}>
-     {this.props.container}
-   </div>
-    );
-  }
-}export default LeftBar;
+const LeftBar = ({ container }) => {
+  return (
+    <div className={styles.MainContainer}>
+      {container}
+    </div>
+  );
+};
+export default LeftBar;

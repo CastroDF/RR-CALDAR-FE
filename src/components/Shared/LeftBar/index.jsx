@@ -20,7 +20,7 @@ const LeftBar = () => {
       </ul>
 
     </div>
-  )
-}
+  );
+};
 
 export default LeftBar;
