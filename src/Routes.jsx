@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import BoilerTypes from './components/boilerTypes';
-import Layout from "./components/shared/layout";
+import BoilerTypes from './components/BoilerTypes';
+import Appointments from './components/Appointments';
+import Layout from "./components/Shared/Layout";
 
 
 const Routes = () => {
@@ -11,6 +12,11 @@ const Routes = () => {
       <Route path="/boilertypes" >
         <Layout>
           <BoilerTypes/>
+        </Layout>
+      </Route>
+      <Route path="/appointments" >
+        <Layout>
+          <Appointments/>
         </Layout>
       </Route>
     </Switch>
