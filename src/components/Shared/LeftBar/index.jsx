@@ -12,13 +12,13 @@ const LeftBar = () => {
       </section>
       <ul className={style.links}>
         <li>
-        <Link className={style.linkNav} classto="/home" >HOME</Link>
+        <Link className={style.linkNav} to="/" >HOME</Link>
         </li>
         <li>
-          <Link className={style.linkNav} classto="/boilertypes">BOILER TYPES</Link>
+          <Link className={style.linkNav} to="/boilertypes">BOILER TYPES</Link>
         </li>
         <li>
-        <Link className={style.linkNav} classto="/customers">CUSTOMERS</Link>
+        <Link className={style.linkNav} to="/customers">CUSTOMERS</Link>
         </li>
       </ul>
 

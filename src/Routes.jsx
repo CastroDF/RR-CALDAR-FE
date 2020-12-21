@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import BoilerTypes from './components/boilerTypes';
-import Customers from './components/customers'
-import Home from './components/home/'
+import Customers from './components/customers/index';
+import Home from './components/home/';
 import Layout from "./components/shared/layout";
 
 
