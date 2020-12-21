@@ -12,6 +12,9 @@ const LeftBar = () => {
       </section>
       <ul className={style.links}>
         <li>
+          <Link className={style.home} to="/home">HOME</Link>
+        </li>
+        <li>
           <Link className={style.linkNav} to="/boilertypes">BOILER  TYPES</Link>
         </li>
         <li>
