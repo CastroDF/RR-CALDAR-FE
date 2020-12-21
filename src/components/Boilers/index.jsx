@@ -1,10 +1,12 @@
 import React from 'react';
 import './Boilers.module.css';
 
-const Boilers = () => (
-  <section>
-    <h3>Boilers</h3>
-  </section>
-);
+const Boilers = () => {
+  return (
+    <h1>
+      Boilers
+    </h1>
+  );
+};
 
 export default Boilers;
