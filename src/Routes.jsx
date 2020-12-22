@@ -7,6 +7,7 @@ import Buildings from './components/Buildings';
 import Boilers from './components/Boilers';
 import Layout from './components/Shared/Layout';
 import Customers from './components/Customers';
+import Technicians from './components/Technicians';
 const Routes = () => {
   return (
     <Switch>
@@ -39,6 +40,11 @@ const Routes = () => {
       <Route path="/customers" >
         <Layout>
           <Customers/>
+        </Layout>
+      </Route>
+      <Route path="/technicians" >
+        <Layout>
+          <Technicians/>
         </Layout>
       </Route>
     </Switch>
