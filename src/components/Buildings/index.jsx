@@ -14,11 +14,14 @@ const Buildings = () => {
   };
   return (
     <div>
-      {items.map(item => (
-        <h1 key=''>
-          {item.name}
-        </h1>
-      ))}
+      <h1 style={ { color: '#00f3' } }>Buildings</h1>
+      <div>
+        {items.map(item => (
+          <h1 key=''>
+            {item.name}
+          </h1>
+        ))}
+      </div>
     </div>
   );
 };
