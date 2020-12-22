@@ -23,10 +23,20 @@
 }
 
 .links li {
+    margin-bottom: 15px;
     list-style: none;
+}
+
+.linksNav:hover {
+    color: red;
 }
 
 .linkNav {
     text-decoration: none;
     color: white;
+}
+
+.home {
+    color: orange;
+    font-size: 20px;
 }
