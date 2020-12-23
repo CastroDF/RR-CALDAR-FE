@@ -10,27 +10,32 @@ const Addform = () => {
     e.preventDefault();
     console.log('entra al submit');
     console.log('id:', Technician.id);
-    const Inputs = async () => {
-      fetch('https://rrcaldar.herokuapp.com/technicians'
-        , {
-          method: 'POST',
-          body: JSON.stringify({
-            id: Technician.id,
-            first_name: Technician.first_name,
-            last_name: Technician.last_name,
-            email: Technician.email,
-            typeIds: Technician.typeIds,
-            skillsId: Technician.skillsId,
-            hour_rate: Technician.hour_rate,
-            daily_capacity: Technician.daily_capacity
-          }),
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-          }
-        });
-      // eslint-disable-next-line no-unused-vars
-      console.log('lo q manda', Inputs);
-    };
+    fetch('https://rrcaldar.herokuapp.com/technicians'
+      , {
+        method: 'POST',
+        body: JSON.stringify({
+          id: Technician.id,
+          first_name: Technician.first_name,
+          last_name: Technician.last_name,
+          email: Technician.email,
+          typeIds: Technician.typeIds,
+          skillsId: Technician.skillsId,
+          hour_rate: Technician.hour_rate,
+          daily_capacity: Technician.daily_capacity
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
+        }
+      })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        return console.log('Technician send Ok', json);
+      })
+      .catch(function (error) {
+        return console.log('Error trying to send the tech', error);
+      });
   };
   const handleUpdate = (todo) => {
     setTechnician({ ...Technician, [todo.target.name]: todo.target.value });
