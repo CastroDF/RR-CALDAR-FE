@@ -141,5 +141,3 @@ const Addform = () => {
 };
 
 export default Addform;
-
-// onSubmit={this.onSubmit} className = "techform"
