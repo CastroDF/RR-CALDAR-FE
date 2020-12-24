@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import HeaderList from './headerList.jsx';
+import HeaderList from './headerList';
 import Techs from './Technicians';
-import Addbutton from './addbutton.jsx';
+import Adbutton from './addbutton';
 import styles from './index.module.css';
 
 function Technicians () {
@@ -25,7 +25,7 @@ function Technicians () {
           item={item}
           setItems={setItems} />
       ))}
-      <Addbutton />
+      <Adbutton />
     </div>
   );
 }
