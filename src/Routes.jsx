@@ -3,18 +3,13 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './components/Home';
 import BoilerTypes from './components/BoilerTypes';
 import Appointments from './components/Appointments';
-<<<<<<< HEAD
 import Buildings from './components/Buildings';
 import Boilers from './components/Boilers';
 import Layout from './components/Shared/Layout';
 import Customers from './components/Customers';
 import Technicians from './components/Technicians';
-=======
-import Technicians from './components/Technicians';
-import Layout from './components/Shared/Layout';
 import Addform from './components/Technicians/Addform';
 
->>>>>>> 0231f77... error routes
 const Routes = () => {
   return (
     <Switch>
@@ -52,6 +47,11 @@ const Routes = () => {
       <Route path="/technicians" >
         <Layout>
           <Technicians/>
+        </Layout>
+      </Route>
+      <Route path="/technicians/addform" >
+        <Layout>
+          <Addform />
         </Layout>
       </Route>
     </Switch>
