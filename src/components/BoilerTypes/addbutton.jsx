@@ -7,7 +7,7 @@ export class addbutton extends Component {
   render () {
     return (
       <React.Fragment>
-        <Link className={style.linkStyle} to="/addform">
+        <Link className={style.linkStyle} to="/boilerTypes">
           <div className={style.more}>
             <button className={style.addtech}>
                             Add

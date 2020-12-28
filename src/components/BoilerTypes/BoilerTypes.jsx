@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './BoilerTypes.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
-function BoilerTypes ({ setItems, item }) {
+function BoilerTypes ({ setItems, item, setIsAdding }) {
   const deleteBoilertype =
         async () => {
           const data = await fetch(`https://radiumrocket-caldar.herokuapp.com/boiler-types/${item.id}`, { method: 'DELETE' }
@@ -12,6 +14,7 @@ function BoilerTypes ({ setItems, item }) {
           setItems(cambios);
           console.log(data);
         };
+
   return (
     <div>
       <div key={item.id} className={styles.container}>
@@ -19,7 +22,7 @@ function BoilerTypes ({ setItems, item }) {
           {item.id}
         </p>
         <p className={styles.skillid}>
-          {item.skillId}
+          {item.skillsId}
         </p>
         <p className={styles.name2tech}>
           {item.description}
@@ -28,7 +31,8 @@ function BoilerTypes ({ setItems, item }) {
           {item.stock}
         </p>
         <p className={styles.lastitems}>
-          <button onClick={deleteBoilertype} className={styles.btnStyle}><i className="far fa-trash-alt"></i></button>
+          <button onClick={ deleteBoilertype } ><FontAwesomeIcon icon={faTrash} /></button>
+          <button onClick={ () => { setIsAdding(true); } } ><FontAwesomeIcon icon={faEdit} /></button>
         </p>
       </div>
     </div>
