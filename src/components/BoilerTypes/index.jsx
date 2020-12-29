@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import HeaderList from './headerList';
 import BoilerType from './BoilerTypes';
 import styles from './index.module.css';
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAd } from '@fortawesome/free-solid-svg-icons';
+import { deleteBoilerTypeAction, fetchData } from '../../redux/actions/boilerTypesActions';
 
-function BoilerTypes () {
-  useEffect(() => {
-    fechItems();
-  }, []);
-
+const BoilerTypes = ({
+  data,
+  receivePosts
+}) => {
   const [isAdding, setIsAdding] = useState(false);
-  const [items, setItems] = useState([]);
-  const fechItems = async () => {
-    const data = await fetch('https://radiumrocket-caldar.herokuapp.com/boiler-types');
-    const items = await data.json();
-    setItems(items);
-  };
-
+  const [datos] = useState(receivePosts.data);
+  console.log(datos);
   if (isAdding) {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', width: '100%' }}>
@@ -50,16 +46,27 @@ function BoilerTypes () {
         </div>
         <div className={styles.mainColumn}>
           <HeaderList />
-          {items.map((item) => (
+          {data.map((item) => (
             <BoilerType
               key={item.id}
               item={item}
-              setItems={setItems} setIsAdding={setIsAdding}/>
+              setIsAdding={setIsAdding}/>
           ))}
         </div>
       </div>
     );
   }
-}
+};
 
-export default BoilerTypes;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    receivePosts: () => dispatch(fetchData()),
+    deleteBoilerType: (id) => dispatch(deleteBoilerTypeAction(id))
+  };
+};
+
+const mapStateToProps = (state) => {
+  return { data: state.data.data };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BoilerTypes);
