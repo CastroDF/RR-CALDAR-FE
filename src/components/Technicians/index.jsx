@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import HeaderList from './headerList.jsx';
-import Techs from './Technicians';
+import Techs from './Technician';
 import Addbutton from './addbutton.jsx';
 import styles from './index.module.css';
 

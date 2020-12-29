@@ -8,7 +8,7 @@ import Boilers from './components/Boilers';
 import Layout from './components/Shared/Layout';
 import Customers from './components/Customers';
 import Technicians from './components/Technicians';
-import Addform from './components/Technicians/Addform';
+import Addform from './components/Technicians/addform';
 
 const Routes = () => {
   return (
