@@ -1,10 +1,9 @@
 import React from 'react';
-import './BoilerTypes.module.css';
 
-const BoilerTypes = () => (
-  <section>
-    <h3>Boiler Types</h3>
-  </section>
-);
+const App = () => {
+  return (
+    <h1>BoilerTypes</h1>
+  );
+};
 
-export default BoilerTypes;
+export default App;
