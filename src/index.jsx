@@ -10,7 +10,7 @@ const configureStore = () => {
   const enhancer = composeWithDevTools();
   return createStore(rootReduce, enhancer);
 };
-
+// dummy text
 const store = configureStore();
 
 ReactDOM.render(
