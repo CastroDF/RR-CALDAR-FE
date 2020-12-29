@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Technicians.module.css';
-
+import { useSelector } from 'react-redux';
 function Technicians ({ setItems, item }) {
   const deleteTechnician =
         async () => {
@@ -12,12 +12,12 @@ function Technicians ({ setItems, item }) {
           console.log(cambios);
           setItems(cambios);
         };
-
+  const Algo = useSelector(state => state.Algo);
   return (
     <div>
       <div key={item.id} className={styles.container}>
         <p className={styles.idtech}>
-          { item.id }
+          { item.id } {Algo }
         </p>
         <p className={styles.nametec}>
           { item.first_name }

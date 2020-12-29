@@ -44,7 +44,7 @@ const Routes = () => {
           <Customers/>
         </Layout>
       </Route>
-      <Route path="/technicians" >
+      <Route path="/technicians" exact >
         <Layout>
           <Technicians/>
         </Layout>

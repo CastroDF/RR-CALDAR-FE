@@ -36,6 +36,8 @@ const Addform = () => {
       .catch(function (error) {
         return console.log('Error trying to send the tech', error);
       });
+    console.log('el valor', e.target.length);
+    e.target.value[0] = '';
   };
   const handleUpdate = (todo) => {
     setTechnician({ ...Technician, [todo.target.name]: todo.target.value });
