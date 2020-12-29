@@ -39,20 +39,20 @@
 }
 .dailycap{
     width: 10px;
-    margin-left: 4%;
+    margin-left: 5%;
 }
 .updateheader{
     width: fit-content;
     margin-left: 6.5%;
 }
+
+.dateStyle {
+    margin-left: 8%;
+}
 .lastitems{
     display: flex;
-    margin-left: 10%;
+    margin-left: 6%;
 }
-.dateStyle {
-    margin-left: 10%;
-}
-
 .btnStyle  {
     background: #ff0000;
     color: #fff;
