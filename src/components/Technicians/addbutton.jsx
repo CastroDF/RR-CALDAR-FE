@@ -6,17 +6,18 @@ export class addbutton extends Component {
   render () {
     return (
       <React.Fragment>
-        <Link className={style.linkStyle} to="/addform">
-          <div className={style.more}>
+        <div className={style.more}>
+          <Link className={style.linkStyle} to="/technicians/addform">
             <button className={style.addtech}>
-                            Add
+              Add
               <i style={buttonStyle} className="material-icons">
-                                add_circle_outline
+                add_circle_outline
               </i>
             </button>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </React.Fragment>
+
     );
   }
 }

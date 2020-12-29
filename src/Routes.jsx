@@ -8,6 +8,8 @@ import Boilers from './components/Boilers';
 import Layout from './components/Shared/Layout';
 import Customers from './components/Customers';
 import Technicians from './components/Technicians';
+import Addform from './components/Technicians/Addform';
+
 const Routes = () => {
   return (
     <Switch>
@@ -45,6 +47,11 @@ const Routes = () => {
       <Route path="/technicians" >
         <Layout>
           <Technicians/>
+        </Layout>
+      </Route>
+      <Route path="/technicians/addform" >
+        <Layout>
+          <Addform />
         </Layout>
       </Route>
     </Switch>
