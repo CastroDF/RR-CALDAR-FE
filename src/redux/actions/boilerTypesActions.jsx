@@ -1,10 +1,4 @@
-import { ADDBOILERTYPE, DELETEBOILERTYPE, RECEIVE_POSTS } from '../../constants/actionsBoilerTypes';
-
-export const receivePosts = (json) => ({
-  type: RECEIVE_POSTS,
-  data: json,
-  receivedAt: Date.now()
-});
+import { ADDBOILERTYPE, DELETEBOILERTYPE, GET_BOILERTYPES_FETCHING, GET_BOILERTYPES_FULFILLED, GET_BOILERTYPES_REJECTED } from '../../constants/actionsBoilerTypes';
 
 let nextBoilerTypeId = 0;
 
@@ -19,11 +13,28 @@ export const deleteBoilerTypeAction = id => ({
   id
 });
 
-export const fetchData = () => {
-  return (dispatch) => {
-    return fetch('https://radiumrocket-caldar.herokuapp.com/boiler-types')
-      .then(response => response.json())
-      .then(json => dispatch(
-        receivePosts(json)));
-  };
+const getBoilerTypesFetching = () => ({
+  type: GET_BOILERTYPES_FETCHING
+});
+
+const getBoilerTypesAction = (data) => ({
+  type: GET_BOILERTYPES_FULFILLED,
+  data,
+  receivedAt: Date.now()
+});
+
+const getBoilerTypesRejected = () => ({
+  type: GET_BOILERTYPES_REJECTED
+});
+
+export const getBoilerTypes = () => dispatch => {
+  dispatch(getBoilerTypesFetching());
+  return fetch('https://radiumrocket-caldar.herokuapp.com/boiler-types')
+    .then(data => data.json())
+    .then(response => {
+      dispatch(getBoilerTypesAction(response));
+    })
+    .catch(() => {
+      dispatch(getBoilerTypesRejected());
+    });
 };

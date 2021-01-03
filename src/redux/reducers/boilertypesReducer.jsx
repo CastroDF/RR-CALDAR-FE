@@ -1,17 +1,19 @@
-import { ADDBOILERTYPE, DELETEBOILERTYPE, RECEIVE_POSTS } from '../../constants/actionsBoilerTypes';
+import { ADDBOILERTYPE, DELETEBOILERTYPE, GET_BOILERTYPES_FETCHING, GET_BOILERTYPES_FULFILLED, GET_BOILERTYPES_REJECTED } from '../../constants/actionsBoilerTypes';
 
 const initialState = {
-  data: [],
+  list: [],
+  IsLoading: false,
+  error: false,
   isAdding: false
 };
-function init (initialData) { return { data: initialData }; }
+
 const boilertypesReducer = (state = initialState, action) => {
   switch (action.type) {
   case ADDBOILERTYPE:
     return {
       ...state,
       list: [
-        ...state.data,
+        ...state.list,
         {
           id: action.id,
           skillsId: action.skillsId,
@@ -24,8 +26,23 @@ const boilertypesReducer = (state = initialState, action) => {
     return {
       ...state
     };
-  case RECEIVE_POSTS:
-    return init(action.payload);
+  case GET_BOILERTYPES_FETCHING:
+    return {
+      ...state,
+      isLoading: true
+    };
+  case GET_BOILERTYPES_FULFILLED:
+    return {
+      ...state,
+      isLoading: false,
+      list: action.data
+    };
+  case GET_BOILERTYPES_REJECTED:
+    return {
+      ...state,
+      isLoading: false,
+      error: true
+    };
   default:
     return state;
   }

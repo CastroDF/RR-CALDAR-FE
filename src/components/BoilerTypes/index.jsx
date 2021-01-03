@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
 import HeaderList from './headerList';
 import BoilerType from './BoilerTypes';
 import styles from './index.module.css';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAd } from '@fortawesome/free-solid-svg-icons';
-import { deleteBoilerTypeAction, fetchData } from '../../redux/actions/boilerTypesActions';
+import { getBoilerTypes } from '../../redux/actions/boilerTypesActions';
+import React from 'react';
+import { bindActionCreators } from 'redux';
 
 const BoilerTypes = ({
-  data,
-  receivePosts
+  isAdding,
+  setIsAdding,
+  boilerTypes,
+  getBoilerT,
+  error
 }) => {
-  const [isAdding, setIsAdding] = useState(false);
-  const [datos] = useState(receivePosts.data);
-  console.log(datos);
+  console.log(boilerTypes);
+  console.log(error);
+  console.log(getBoilerT);
   if (isAdding) {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', width: '100%' }}>
@@ -46,7 +50,7 @@ const BoilerTypes = ({
         </div>
         <div className={styles.mainColumn}>
           <HeaderList />
-          {data.map((item) => (
+          {boilerTypes.map((item) => (
             <BoilerType
               key={item.id}
               item={item}
@@ -59,14 +63,16 @@ const BoilerTypes = ({
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    receivePosts: () => dispatch(fetchData()),
-    deleteBoilerType: (id) => dispatch(deleteBoilerTypeAction(id))
-  };
+  return bindActionCreators({
+    getBoilerT: getBoilerTypes
+  }, dispatch);
 };
 
 const mapStateToProps = (state) => {
-  return { data: state.data.data };
+  return {
+    boilerTypes: state.list,
+    error: state.error
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BoilerTypes);
