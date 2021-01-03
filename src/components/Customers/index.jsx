@@ -1,10 +1,43 @@
 import React from 'react';
-import './Customers.module.css';
+import styles from '../Customers/Customers.module.css';
 
-const Customers = () => (
-  <section>
-    <h3>Customers</h3>
-  </section>
-);
+function Customers ({ setItems, item }) {
+  return (
+    <div>
+      <div className={styles.container}>
+        <p className={styles.id_Customer}>
+          ID Customers
+        </p>
+        <p className={styles.nameCustomer}>
+         Type
+        </p>
+        <p className={styles.name2Customer}>
+          Address
+        </p>
+        <p className={styles.emailCustomer}>
+          Email
+        </p>
+        <p className={styles.typeid}>
+          Phone
+        </p>
+        <p className={styles.skillid}>
+          City
+        </p>
+        <p className={styles.hourrate}>
+          Country
+        </p>
+        <p className={styles.dailycap}>
+          ID
+        </p>
+        <p className={styles.dateStyle}>
+          DATE
+        </p>
+        <p className={styles.lastitems}>
+          <button className={styles.btnStyle}><i>x</i></button>
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default Customers;

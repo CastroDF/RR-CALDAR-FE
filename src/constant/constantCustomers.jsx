@@ -1,3 +1,0 @@
-export const ADDCUSTOMER = 'ADD_CUSTOMER';
-export const DELETECUSTOMER = 'DELETE_CUSTOMER';
-export const RECEIVE_POSTS = 'RECEIVE_POSTS';
