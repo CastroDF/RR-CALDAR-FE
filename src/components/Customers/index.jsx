@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from '../Customers/Customers.module.css';
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = 'mongodb+srv://customers2020:customers2020@caldar2020.r3nxg.mongodb.net/Customers?retryWrites=true&w=majority';
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(() => {
-  // perform actions on the collection object
-  client.close();
-});
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = 'mongodb+srv://customers2020:customers2020@caldar2020.r3nxg.mongodb.net/Customers?retryWrites=true&w=majority';
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(() => {
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 function Customers ({ setItems, item }) {
   return (
