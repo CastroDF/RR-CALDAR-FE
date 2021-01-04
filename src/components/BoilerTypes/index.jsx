@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAd } from '@fortawesome/free-solid-svg-icons';
 import { getBoilerTypes } from '../../redux/actions/boilerTypesActions';
-import React from 'react';
 import { bindActionCreators } from 'redux';
+import React, { useEffect } from 'react';
 
 const BoilerTypes = ({
   isAdding,
@@ -15,7 +15,9 @@ const BoilerTypes = ({
   getBoilerT,
   error
 }) => {
-  getBoilerT();
+  useEffect(() => {
+    getBoilerT();
+  }, []);
   console.log(boilerTypes);
   if (isAdding) {
     return (
