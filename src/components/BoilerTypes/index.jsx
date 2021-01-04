@@ -15,9 +15,8 @@ const BoilerTypes = ({
   getBoilerT,
   error
 }) => {
+  getBoilerT();
   console.log(boilerTypes);
-  console.log(error);
-  console.log(getBoilerT);
   if (isAdding) {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', width: '100%' }}>
@@ -70,8 +69,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    boilerTypes: state.list,
-    error: state.error
+    boilerTypes: state.data.list
   };
 };
 

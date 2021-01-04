@@ -17,10 +17,9 @@ const getBoilerTypesFetching = () => ({
   type: GET_BOILERTYPES_FETCHING
 });
 
-const getBoilerTypesAction = (data) => ({
+const getBoilerTypesAction = (datos) => ({
   type: GET_BOILERTYPES_FULFILLED,
-  data,
-  receivedAt: Date.now()
+  datos
 });
 
 const getBoilerTypesRejected = () => ({

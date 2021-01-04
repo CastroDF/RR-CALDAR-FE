@@ -2,6 +2,7 @@ import { ADDBOILERTYPE, DELETEBOILERTYPE, GET_BOILERTYPES_FETCHING, GET_BOILERTY
 
 const initialState = {
   list: [],
+  fecha: '',
   IsLoading: false,
   error: false,
   isAdding: false
@@ -35,7 +36,8 @@ const boilertypesReducer = (state = initialState, action) => {
     return {
       ...state,
       isLoading: false,
-      list: action.data
+      list: action.datos,
+      fecha: action.receivedAt
     };
   case GET_BOILERTYPES_REJECTED:
     return {
