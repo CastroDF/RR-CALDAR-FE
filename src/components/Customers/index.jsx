@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../Customers/Customers.module.css';
+import Form from './Forms/form';
 
 // const MongoClient = require('mongodb').MongoClient;
 // const uri = 'mongodb+srv://customers2020:customers2020@caldar2020.r3nxg.mongodb.net/Customers?retryWrites=true&w=majority';
@@ -12,9 +13,11 @@ import styles from '../Customers/Customers.module.css';
 function Customers ({ setItems, item }) {
   return (
     <div>
+      <h1>Customers List</h1>
+      <div className={styles.fill}><Form></Form></div>
       <div className={styles.container}>
         <p className={styles.id_Customer}>
-          ID Customers
+          ID
         </p>
         <p className={styles.nameCustomer}>
          Type
@@ -34,12 +37,20 @@ function Customers ({ setItems, item }) {
         <p className={styles.hourrate}>
           Country
         </p>
-        <p className={styles.dailycap}>
-          ID
+        <p className={styles.lastitems}>
+          <button className={styles.btnStyle}><i>x</i></button>
         </p>
-        <p className={styles.dateStyle}>
-          DATE
-        </p>
+      </div>
+      <div className={styles.container}>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9</p>
         <p className={styles.lastitems}>
           <button className={styles.btnStyle}><i>x</i></button>
         </p>
