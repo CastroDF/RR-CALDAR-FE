@@ -19,38 +19,35 @@ function Customers ({ setItems, item }) {
         <p className={styles.id_Customer}>
           ID
         </p>
-        <p className={styles.nameCustomer}>
+        <p className={styles.type}>
          Type
         </p>
-        <p className={styles.name2Customer}>
+        <p className={styles.address}>
           Address
         </p>
-        <p className={styles.emailCustomer}>
+        <p className={styles.email}>
           Email
         </p>
-        <p className={styles.typeid}>
+        <p className={styles.phone}>
           Phone
         </p>
-        <p className={styles.skillid}>
+        <p className={styles.city}>
           City
         </p>
-        <p className={styles.hourrate}>
-          Country
-        </p>
-        <p className={styles.lastitems}>
-          <button className={styles.btnStyle}><i>x</i></button>
+        <p>
+          <button className={styles.delBtn}><i>x</i></button>
         </p>
       </div>
       <div className={styles.container}>
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
-        <p>5</p>
-        <p>6</p>
-        <p>7</p>
-        <p>8</p>
-        <p>9</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
       </div>
     </div>
   );

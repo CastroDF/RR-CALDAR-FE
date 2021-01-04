@@ -4,59 +4,18 @@
     border-bottom: 1px dotted #ccc;
     width: 100%;
 }
-.id_Customer {
+.id_Customer, .type, .address, .email, .phone, .city {
     width: 125px;
     margin-left: 1%;
-}
-.nameCustomer {
-    width: 125px;
-    margin-left: 2%;
-    text-align: left;
-}
-.name2Customer {
-    width: 125px;
-    margin-left: 1%;
-
-    text-align: left;
-}
-.emailCustomer {
-    width: 125px;
-    margin-left: 1%;
-    text-align: left;
-}
-.typeid {
-    width: 125px;
-    margin-left: 1%;
-    text-align: center;
-}
-.skillid{
-    width: 125px;
-    margin-left: 2.5%;
-    text-align: center;
-}
-.hourrate{
-    width: 125px;
-    margin-left: 2%;
-}
-.dailycap{
-    width: 125px;
-    margin-left: 5%;
-}
-.updateheader{
-    width: 125px;
-    margin-left: 6.5%;
 }
 
-.dateStyle {
-    margin-left: 8%;
-}
-.lastitems{
+.delBtn {
     display: flex;
-    margin-left: 6%;
-}
-.btnStyle  {
-    background: #ff0000;
-    color: #fff;
+    align-items: flex-end;
+    color: rgb(255, 255, 255);
+    background-color: rgb(240, 0, 0);
+    text-align: center;
+    font-weight: bold;
     border-radius: 50%;
     cursor: pointer;
 }
