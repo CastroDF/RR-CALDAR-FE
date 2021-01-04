@@ -51,9 +51,6 @@ function Customers ({ setItems, item }) {
         <p>7</p>
         <p>8</p>
         <p>9</p>
-        <p className={styles.lastitems}>
-          <button className={styles.btnStyle}><i>x</i></button>
-        </p>
       </div>
     </div>
   );

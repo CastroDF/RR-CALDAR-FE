@@ -8,10 +8,26 @@ const formCustomer = () => {
     }}>
       {({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
-          <Field name="name">{({ input }) => <input placeholder="id_customer" type="inter" {...input} />}</Field>
-          <input placeholder="Type" type="text"></input>
-          <input placeholder="Address" type="text"></input>
-          <input placeholder="Email" type="email"></input>
+          <Field name="id_customer">
+            {({ input }) => (
+              <input
+                placeholder="id_customer"
+                type="text"
+                {...input}
+              />
+            )}
+          </Field>
+          <Field name="type">
+            {({ input }) => (
+              <input
+                placeholder="type"
+                type="text"
+                {...input}
+              />
+            )}
+          </Field>
+          <input className="Address" placeholder="Address" type="text"></input>
+          <input className="Email" placeholder="Email" type="email"></input>
           <input placeholder="Phone" type="text"></input>
           <input placeholder="City" type="text"></input>
           <button type="submit">Add</button>
