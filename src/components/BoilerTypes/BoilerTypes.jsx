@@ -4,17 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function BoilerTypes ({ setItems, item, setIsAdding }) {
-  const deleteBoilertype =
-        async () => {
-          const data = await fetch(`https://radiumrocket-caldar.herokuapp.com/boiler-types/${item.id}`, { method: 'DELETE' }
-          );
-          const cambio = await fetch('https://radiumrocket-caldar.herokuapp.com/boiler-types');
-          const cambios = await cambio.json();
-          console.log(cambios);
-          setItems(cambios);
-          console.log(data);
-        };
-
   return (
     <div>
       <div key={item.id} className={styles.container}>
@@ -31,7 +20,7 @@ function BoilerTypes ({ setItems, item, setIsAdding }) {
           {item.stock}
         </p>
         <p className={styles.lastitems}>
-          <button onClick={ deleteBoilertype } ><FontAwesomeIcon icon={faTrash} /></button>
+          <button ><FontAwesomeIcon icon={faTrash} /></button>
           <button onClick={ () => { setIsAdding(true); } } ><FontAwesomeIcon icon={faEdit} /></button>
         </p>
       </div>

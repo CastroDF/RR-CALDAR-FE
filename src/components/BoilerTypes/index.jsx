@@ -18,7 +18,6 @@ const BoilerTypes = ({
   useEffect(() => {
     getBoilerT();
   }, []);
-  console.log(boilerTypes);
   if (isAdding) {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', width: '100%' }}>
