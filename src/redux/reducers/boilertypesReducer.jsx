@@ -36,8 +36,7 @@ const boilertypesReducer = (state = initialState, action) => {
     return {
       ...state,
       isLoading: false,
-      list: action.datos,
-      fecha: action.receivedAt
+      list: action.datos
     };
   case GET_BOILERTYPES_REJECTED:
     return {
