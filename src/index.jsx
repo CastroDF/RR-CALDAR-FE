@@ -2,21 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import rootReducer from './redux/reducers/rootReducer';
 
-const configureStore = () => {
-  const enhancer = composeWithDevTools();
-  return createStore(rootReducer, enhancer, applyMiddleware(thunk));
-};
+const enhancers = [composeWithDevTools(), applyMiddleware(thunk)];
 
-const store = configureStore();
+const store = createStore(
+  rootReducer,
+  compose(...enhancers)
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store} >
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>,
