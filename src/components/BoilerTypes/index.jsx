@@ -4,13 +4,14 @@ import styles from './index.module.css';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAd } from '@fortawesome/free-solid-svg-icons';
-import { getBoilerTypes } from '../../redux/actions/boilerTypesActions';
+import { getBoilerTypes, setIsAdding } from '../../redux/actions/boilerTypesActions';
 import { bindActionCreators } from 'redux';
 import React, { useEffect } from 'react';
+import Button from '../Shared/AddButton';
 
 const BoilerTypes = ({
   isAdding,
-  setIsAdding,
+  setAdding,
   boilerTypes,
   getBoilerT,
   error
@@ -22,7 +23,7 @@ const BoilerTypes = ({
     return (
       <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', width: '100%' }}>
         <h2 style={{ color: '#00f3' }}> Add Boiler Type</h2>
-        <form onSubmit={ () => { setIsAdding(false); } } style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
+        <form onSubmit={ () => { setAdding(false); } } style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
           <div>
             <input type="text" name="id" placeholder="Id" />
           </div>
@@ -45,7 +46,7 @@ const BoilerTypes = ({
     return (
       <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', width: '100%' }}>
         <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-          <button onClick={ () => { setIsAdding(true); } } ><FontAwesomeIcon icon={faAd} /></button>
+          <Button onClick={ () => { setAdding(true); } } ></Button>
           <h2 style={{ color: '#00f3' }}>Boiler Types</h2>
         </div>
         <div className={styles.mainColumn}>
@@ -54,7 +55,7 @@ const BoilerTypes = ({
             <BoilerType
               key={item.id}
               item={item}
-              setIsAdding={setIsAdding}/>
+              setIsAdding={setAdding(false)}/>
           ))}
         </div>
       </div>
@@ -64,13 +65,15 @@ const BoilerTypes = ({
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    getBoilerT: getBoilerTypes
+    getBoilerT: getBoilerTypes,
+    setAdding: setIsAdding
   }, dispatch);
 };
 
 const mapStateToProps = (state) => {
   return {
-    boilerTypes: state.data.list
+    boilerTypes: state.data.list,
+    isAdding: state.data.isAdding
   };
 };
 
