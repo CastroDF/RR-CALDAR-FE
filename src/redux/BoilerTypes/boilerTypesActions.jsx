@@ -1,4 +1,4 @@
-import { ADDBOILERTYPE, DELETEBOILERTYPE, GET_BOILERTYPES_FETCHING, GET_BOILERTYPES_FULFILLED, GET_BOILERTYPES_REJECTED, SET_ADDING } from '../../constants/actionsBoilerTypes';
+import { ADDBOILERTYPE, DELETEBOILERTYPE, GET_BOILERTYPES_FETCHING, GET_BOILERTYPES_FULFILLED, GET_BOILERTYPES_REJECTED, SET_ADDING } from './actionsBoilerTypes';
 
 let nextBoilerTypeId = 0;
 
@@ -17,9 +17,9 @@ const getBoilerTypesFetching = () => ({
   type: GET_BOILERTYPES_FETCHING
 });
 
-const getBoilerTypesAction = (datos) => ({
+const getBoilerTypesAction = (payload) => ({
   type: GET_BOILERTYPES_FULFILLED,
-  datos
+  payload
 });
 
 const getBoilerTypesRejected = () => ({
@@ -33,7 +33,7 @@ const setIsAdd = () => ({
 export const getBoilerTypes = () => dispatch => {
   dispatch(getBoilerTypesFetching());
   return fetch('https://radiumrocket-caldar.herokuapp.com/boiler-types')
-    .then(data => data.json())
+    .then(payload => payload.json())
     .then(response => {
       dispatch(getBoilerTypesAction(response));
     })

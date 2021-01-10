@@ -1,0 +1,14 @@
+form{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.container h2{
+    color: #00f3;
+}

@@ -2,16 +2,14 @@ import HeaderList from './headerList';
 import BoilerType from './BoilerTypes';
 import styles from './index.module.css';
 import { connect } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAd } from '@fortawesome/free-solid-svg-icons';
-import { getBoilerTypes, setIsAdding } from '../../redux/actions/boilerTypesActions';
+import { getBoilerTypes } from '../../redux/BoilerTypes/boilerTypesActions';
 import { bindActionCreators } from 'redux';
 import React, { useEffect } from 'react';
 import Button from '../Shared/AddButton';
+import addBoilerType from './addBoilerType';
 
 const BoilerTypes = ({
   isAdding,
-  setAdding,
   boilerTypes,
   getBoilerT,
   error
@@ -20,42 +18,18 @@ const BoilerTypes = ({
     getBoilerT();
   }, []);
   if (isAdding) {
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', width: '100%' }}>
-        <h2 style={{ color: '#00f3' }}> Add Boiler Type</h2>
-        <form onSubmit={ () => { setAdding(false); } } style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
-          <div>
-            <input type="text" name="id" placeholder="Id" />
-          </div>
-          <div>
-            <input type="text" name="skillsId" placeholder="skillsId" />
-          </div>
-          <div>
-            <input type="text" name="description" placeholder="Description"/>
-          </div>
-          <div>
-            <input type="number" name="stock" placeholder="stock" />
-          </div>
-          <div>
-            <button type="submit" color="success" className="btn"><FontAwesomeIcon icon={faAd} /></button>
-          </div>
-        </form>
-      </div>
-    );
+    <addBoilerType></addBoilerType>;
   } else {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', width: '100%' }}>
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-          <Button onClick={ () => { setAdding(true); } } ></Button>
-          <h2 style={{ color: '#00f3' }}>Boiler Types</h2>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <Button></Button>
+          <h2>Boiler Types</h2>
         </div>
         <div className={styles.mainColumn}>
           <HeaderList />
           {boilerTypes.map((item) => (
-            <BoilerType
-              key={item.id}
-              item={item}
-              setIsAdding={setAdding(false)}/>
+            <BoilerType key={item.id} item={item} />
           ))}
         </div>
       </div>
@@ -65,8 +39,7 @@ const BoilerTypes = ({
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    getBoilerT: getBoilerTypes,
-    setAdding: setIsAdding
+    getBoilerT: getBoilerTypes
   }, dispatch);
 };
 

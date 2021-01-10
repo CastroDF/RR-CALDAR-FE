@@ -1,4 +1,4 @@
-import { ADDBOILERTYPE, DELETEBOILERTYPE, GET_BOILERTYPES_FETCHING, GET_BOILERTYPES_FULFILLED, GET_BOILERTYPES_REJECTED, SET_ADDING } from '../../constants/actionsBoilerTypes';
+import { ADDBOILERTYPE, DELETEBOILERTYPE, GET_BOILERTYPES_FETCHING, GET_BOILERTYPES_FULFILLED, GET_BOILERTYPES_REJECTED, SET_ADDING } from './actionsBoilerTypes';
 
 const initialState = {
   list: [],
@@ -36,7 +36,7 @@ const boilertypesReducer = (state = initialState, action) => {
     return {
       ...state,
       isLoading: false,
-      list: action.datos
+      list: action.payload
     };
   case GET_BOILERTYPES_REJECTED:
     return {
