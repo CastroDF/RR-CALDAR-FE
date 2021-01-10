@@ -1,0 +1,10 @@
+.textInputLabel{
+    color: #000000;
+}
+.textInput{
+    padding: 5px;
+}
+.error{
+    width: 100%;
+    color: rgb(255, 60, 0);
+}
