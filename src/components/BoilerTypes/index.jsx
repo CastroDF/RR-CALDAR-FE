@@ -6,7 +6,8 @@ import { getBoilerTypes } from '../../redux/BoilerTypes/boilerTypesActions';
 import { bindActionCreators } from 'redux';
 import React, { useEffect } from 'react';
 import Button from '../Shared/AddButton';
-import addBoilerType from './addBoilerType';
+import AddBoilerType from './AddBoilerType';
+import Modal from '../Shared/Modal';
 
 const BoilerTypes = ({
   isAdding,
@@ -18,10 +19,15 @@ const BoilerTypes = ({
     getBoilerT();
   }, []);
   if (isAdding) {
-    <addBoilerType></addBoilerType>;
+    <Modal>
+      <AddBoilerType></AddBoilerType>
+    </Modal>;
   } else {
     return (
       <div className={styles.container}>
+        <Modal>
+          <AddBoilerType></AddBoilerType>
+        </Modal>;
         <div className={styles.header}>
           <Button></Button>
           <h2>Boiler Types</h2>

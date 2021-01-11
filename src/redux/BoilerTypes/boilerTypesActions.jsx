@@ -1,9 +1,9 @@
-import { ADDBOILERTYPE, DELETEBOILERTYPE, GET_BOILERTYPES_FETCHING, GET_BOILERTYPES_FULFILLED, GET_BOILERTYPES_REJECTED, SET_ADDING } from './actionsBoilerTypes';
+import { ADD_BOILERTYPE, DELETEBOILERTYPE, GET_BOILERTYPES_FETCHING, GET_BOILERTYPES_FULFILLED, GET_BOILERTYPES_REJECTED, SET_ADDING } from './actionsBoilerTypes';
 
 let nextBoilerTypeId = 0;
 
 export const addBoilerTypeAction = boilertype => ({
-  type: ADDBOILERTYPE,
+  type: ADD_BOILERTYPE,
   id: nextBoilerTypeId++,
   boilertype
 });

@@ -3,7 +3,7 @@ import './addBoilerTypes.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAd } from '@fortawesome/free-solid-svg-icons';
 import { Form, Field } from 'react-final-form';
-import textInput from '../inputComponent';
+import textInput from '../InputComponent';
 
 const addBoilerType = (props) => {
   const onSubmitForm = (values) => {
@@ -60,7 +60,9 @@ const addBoilerType = (props) => {
               type="submit"
               color="success"
               disabled={ submitting || prestine }
-              className="btn"><FontAwesomeIcon icon={faAd} /> </Field>
+              className="btn"><FontAwesomeIcon icon={faAd} />
+            </Field>
+            <input type="text" value="valor"></input>
           </form>
         )} >
       </Form>
