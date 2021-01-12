@@ -4,3 +4,10 @@
 button{
     font-size: 20px;
 }
+header{
+    display: flex;
+    flex-wrap: wrap;
+}
+header h2{
+    color: rgba(0, 0, 255, 0.212);
+}
